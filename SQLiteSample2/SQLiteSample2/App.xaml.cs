@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using SQLiteSample2.Models;
 using SQLiteSample2.ViewModels;
 using SQLiteSample2.Views;
 using Xamarin.Forms;
@@ -24,6 +25,8 @@ namespace SQLiteSample2 {
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry) {
+            containerRegistry.RegisterSingleton<CoreModel>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
         }
